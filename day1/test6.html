@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test6 for vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app6">
+		<span>{{message}}</span></br>
+		<input type="password" v-model="message"></br>
+		<input type="text" v-model="message1">
+	</div>
+</body>
+<script type="text/javascript">
+	var app6 = new Vue({
+		el:"#app6",
+		data:{
+			message1:"hello world"
+		},
+        computed:{
+        	message:function(){
+        		return this.message1;
+        	}
+        }
+	});
+</script>
+</html>

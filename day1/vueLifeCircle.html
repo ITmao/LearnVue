@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vueLifeCircle for vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="vueLifeCircle">
+    <p>vueLifeCircle for vue</p>
+</div>
+</body>
+	<script type="text/javascript">
+        var app = new Vue({
+            el:'#vueLifeCircle',
+            data:{
+            },
+            beforeCreate:function(){
+                console.log('beforeCreate');
+            },
+            created:function(){
+                console.log('created');
+            },
+            beforeMount:function(){
+                console.log('beforeMount');
+            },
+            mounted:function(){
+                console.log('mounted');
+            },
+            beforeUpdate:function(){
+                console.log('beforeUpdate');
+            },
+            updated:function(){
+                console.log('updated');
+            },
+            beforeDestroy:function(){
+                console.log('beforeDestroy');
+            },
+            destroyed:function(){
+                console.log('destroyed');
+            }
+        });
+    </script>
+</html>

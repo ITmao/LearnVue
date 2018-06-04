@@ -6,21 +6,20 @@
 </head>
 <body>
 <div id="app4">
-	<span>{{message}}</span></br>
-	<input type="password" v-model="message"></br>
-	<input type="text" v-model="message1">
+    <ol>
+        <li v-for="(item,index) in todos" :key="index">{{item.text}}</li>
+    </ol>
 </div>
 </body>
 	<script type="text/javascript">
-        var app2 = new Vue({
+        var app4 = new Vue({
             el:'#app4',
             data:{
-                message1:''
-            },
-            computed:{
-            	message:function(){
-            		return this.message1;
-            	}
+                todos:[
+                    { text: '学习 JavaScript' },
+                    { text: '学习 Vue' },
+                    { text: '整个牛项目' }
+                ]
             }
         });
     </script>
