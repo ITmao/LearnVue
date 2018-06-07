@@ -8,7 +8,7 @@
 <div id="app7">
     <ol>
         <!-- <li v-for="(item,index) in todos" :key="index">{{item.text}}</li> -->
-        <todo-item v-for="(item,index) in groceryList" :todo="item" :key="index"></todo-item>
+        <todo-item v-for="(item,index) in groceryList" :todo="item" :key="index" :dict="dicts" ref="todo"></todo-item>
         <!-- <todo-item v-for="item in groceryList" :todo="item" :key="item.id"></todo-item> -->
     </ol>
 </div>
@@ -24,11 +24,29 @@
         var app4 = new Vue({
             el: '#app7',
             data: {
+                dicts: {
+                    dictentry: '1041',
+                    subentry: ['2', 'T', 'A', 'X'],
+                    filterTyle: 'in',
+                    data: 'dict_entry_1041'
+
+                },
                 groceryList: [
                     { id: 0, text: '蔬菜' },
                     { id: 1, text: '奶酪' },
                     { id: 2, text: '随便其它什么人吃的东西' }
                 ]
+            },
+            methods:{
+                getRefs:function(ref){
+                    return this.$refs[ref];
+                }
+            },
+            mounted:function(){
+                var todo = this.getRefs('todo');
+                for(let a in todo[0].$attrs.dict){
+                    console.log(todo[0].$attrs.dict[a]);
+                }
             }
         });
     </script>
